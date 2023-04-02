@@ -9,4 +9,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Person extends Model
 {
     use HasFactory, SoftDeletes;
+
+    public function business()
+    {
+        return $this->belongsTo(Business::class);
+    }
 }
