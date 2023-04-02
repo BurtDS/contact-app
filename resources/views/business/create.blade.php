@@ -14,6 +14,13 @@
 
                     <form action="{{route('business.store')}}" method="POST">
                         @csrf
+                        @if ($errors->any())
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{$error}}</>
+                                @endforeach
+                            </ul>
+                        @endif
 
                         <div class="grid grid-cols-1 sm:grid-cols-6 gap-x-6 gap-y-6">
                             <span class="sm:col-span-3">
