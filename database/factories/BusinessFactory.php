@@ -18,8 +18,7 @@ class BusinessFactory extends Factory
     {
         return [
             'business_name' => fake()->company(),
-            'contact_email' => fake()->unique()->companyEmail(),
-            'phone' => fake()->phoneNumber()
+            'contact_email' => fake()->unique()->companyEmail()
         ];
     }
 }
