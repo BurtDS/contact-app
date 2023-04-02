@@ -10,6 +10,8 @@ class Person extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $with = ['business'];
+
     public function business()
     {
         return $this->belongsTo(Business::class);
