@@ -37,4 +37,13 @@ Route::controller(PersonController::class)->prefix('person')->name('person')->mi
     Route::delete('/{person}/destroy', 'destroy')->name('.destroy');
 });
 
+Route::controller(BusinessController::class)->prefix('business')->name('business')->middleware('auth')->group(function(){
+    Route::get('/', 'index')->name('.index');
+    Route::get('/create', 'create')->name('.create');
+    Route::post('/store', 'store')->name('.store');
+    Route::get('/{business}/edit', 'edit')->name('.edit');
+    Route::put('/{business}/update', 'update')->name('.update');
+    Route::delete('/{business}/destroy', 'destroy')->name('.destroy');
+});
+
 require __DIR__.'/auth.php';
