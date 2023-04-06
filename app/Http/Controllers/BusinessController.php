@@ -40,7 +40,7 @@ class BusinessController extends Controller
      */
     public function show(Business $business)
     {
-        //
+        return view('business.detail')->with('business',$business);
     }
 
     /**
