@@ -48,4 +48,10 @@ Route::controller(BusinessController::class)->prefix('business')->name('business
     Route::delete('/{business}/destroy', 'destroy')->name('.destroy');
 });
 
+Route::controller(TaskController::class)->prefix('task')->name('task')->middleware('auth')->group(function(){
+    Route::get('/', 'index')->name('.index');
+    Route::post('/store', 'store')->name('.store');
+    Route::put('/{task}/complete', 'complete')->name('.complete');
+});
+
 require __DIR__.'/auth.php';

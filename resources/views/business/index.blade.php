@@ -40,7 +40,7 @@
                                     </td>
                                     <td>
                                         @foreach ($business->tags as $tag)
-                                            {{$tag->tag_name}}
+                                            <span class="bg-green-600 text-white text-xs px-1 rounded-full">{{$tag->tag_name}}</span>
                                         @endforeach
                                     </td>
                                     <td>
