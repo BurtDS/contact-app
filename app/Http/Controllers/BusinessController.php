@@ -15,7 +15,7 @@ class BusinessController extends Controller
      */
     public function index()
     {
-        return view('business.index')->with(['businesses' => Business::all(), 'tags' => Tag::all()]);
+        return view('business.index')->with(['businesses' => Business::withCount('people')->paginate(10), 'tags' => Tag::all()]);
     }
 
     /**
