@@ -27,4 +27,9 @@ class Task extends Model
         $this->save();
         return true;
     }
+
+    public function scopeOpen($query)
+    {
+        $query->where('status', 'open');
+    }
 }

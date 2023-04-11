@@ -11,7 +11,7 @@ class TaskController extends Controller
 {
     public function index()
     {
-        return view('task.index')->with('tasks',Task::all());
+        return view('task.index')->with('tasks',Task::open()->get());
     }
 
     public function store(Request $request)
