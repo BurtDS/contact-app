@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         //
-        \App\Models\User::factory()->create(
+        \App\Models\User::factory()->createQuietly(
         [
             'name' => 'Bert',
             'email' => 'bert@vulpo.be',

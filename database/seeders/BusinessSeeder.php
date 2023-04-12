@@ -12,6 +12,6 @@ class BusinessSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Business::factory(70)->create();
+        \App\Models\Business::factory(70)->createQuietly();
     }
 }

@@ -5,7 +5,6 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Models\Person;
 
-
 class CheckForBirthdays extends Command
 {
     /**
@@ -20,7 +19,7 @@ class CheckForBirthdays extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'This is the birthday command';
 
     /**
      * Execute the console command.
@@ -28,13 +27,8 @@ class CheckForBirthdays extends Command
     public function handle(): void
     {
         //
-
-        $people = Person::whereDay('birthday', now()->addDays(3)->format('d'))
-            ->whereMonth('birthday', now()->addDays(3)->format('m'))
-            ->get();
-
-
-
-
+        $people = Person::whereMonth('birthday', '=', now()->addDays(5)->format('m'))
+            ->whereDay('birthday', '=', now()->addDays(5)->format('d'))
+            ->pluck('firstname');
     }
 }
